@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
-
-
 public class VentaOnline {
     public static void main(String[] args) {
     List<Producto> carrito = new ArrayList<Producto>();
