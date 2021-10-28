@@ -12,11 +12,12 @@ public class Aseo extends Producto{
     
     private boolean cuidadoEspecial;
 
-    public Aseo(boolean cuidadoEspecial, String categoria, int codigo, String descripcion, int precio) {
-        super(categoria, codigo, descripcion, precio);
+    public Aseo(boolean cuidadoEspecial, String categoria, int codigo, String descripcion, int precio, int cantidad) {
+        super(categoria, codigo, descripcion, precio, cantidad);
         this.cuidadoEspecial = cuidadoEspecial;
     }
 
+    
     public Aseo() {
     }
 
