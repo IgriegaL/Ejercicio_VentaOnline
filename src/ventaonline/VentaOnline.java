@@ -24,24 +24,35 @@ public class VentaOnline {
                 cloro.Mostrar();
                 lavaloza.Mostrar();
                 
+                
+                System.out.println("---------------------------------------");
                 System.out.println("Que productos desea agregar al carrito?");
                 System.out.println("1. Cerverza 2. Bebida 3. Cloro 4. Lavaloza");
-                opcion = s.nextInt();
-                if (opcion == 1){
+                int opcion2 = 0;
+                opcion2 = s.nextInt();
+                if (opcion2 == 1){
                     carrito.add(cerveza);
                     System.out.println("Cuantos productos desea agregar al carrito?");
                     var Cant = s.nextInt();
                     cerveza.setCantidad(Cant);
-                }if (opcion == 2) {
+                }
+                if (opcion2 == 2) {
                     carrito.add(bebida);
                     System.out.println("Cuantos productos desea agregar al carrito?");
                     var Cant = s.nextInt();
                     bebida.setCantidad(Cant);
-                }if (opcion == 3) {
+                }
+                if (opcion2 == 3) {
                     carrito.add(cloro);
                     System.out.println("Cuantos productos desea agregar al carrito?");
                     var Cant = s.nextInt();
                     cloro.setCantidad(Cant);
+                }
+                if (opcion2 == 4) {
+                    carrito.add(lavaloza);
+                    System.out.println("Cuantos productos desea agregar al carrito?");
+                    var Cant = s.nextInt();
+                    lavaloza.setCantidad(Cant);
                 }
                 
             }
@@ -49,7 +60,11 @@ public class VentaOnline {
                 System.out.println("Su Carrito contiene:");
                 for (Producto producto : carrito) {
                     System.out.println("Produto: " + producto.getDescripcion() + " Precio: "+ producto.getPrecio() + " Cantidad: " + producto.getCantidad());
+                    
                 }
+                int t = cerveza.getPrecio() * cerveza.getCantidad() + bebida.getPrecio() * bebida.getCantidad() + cloro.getPrecio() * cloro.getCantidad()+ lavaloza.getPrecio() * lavaloza.getCantidad();
+                
+                System.out.println("Total compra: " + t);
             
 
             }
