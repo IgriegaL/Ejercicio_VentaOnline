@@ -8,10 +8,10 @@ package ventaonline;
  *
  * @author pc
  */
-public class MetodosInterface implements Interface{
+public class MetodosInterfaceIml implements Interface{
     private String comentario;
 
-    public MetodosInterface(String comentario) {
+    public MetodosInterfaceIml(String comentario) {
         this.comentario = comentario;
     }
 
