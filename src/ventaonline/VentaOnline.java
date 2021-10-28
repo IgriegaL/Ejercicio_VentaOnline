@@ -11,12 +11,14 @@ public class VentaOnline {
     Liquidos bebida = new Liquidos(0.0,"Bebidas",002,"Inca-Cola",1290,0);
     Aseo cloro = new Aseo(true,"aseo",003,"Clorinda",1300,0);
     Aseo lavaloza = new Aseo(true,"aseo",004,"Magistral",2200,0);
-
+    
+    
+    String comentario = "No deja comentario";
     Scanner s = new Scanner(System.in);
     var opcion = 0;
     
         while (opcion != 5) {
-            System.out.println("1.-Ver Productos 2.-Ver carrito  5.-Salir");
+            System.out.println("1.-Ver Productos 2.-Ver carrito 3.- Agregar un comentario 5.-Salir");
             opcion = s.nextInt();
             if (opcion == 1) {
                 cerveza.Mostrar();
@@ -57,6 +59,7 @@ public class VentaOnline {
                 
             }
             if (opcion == 2){
+                System.out.println("---------------------------------------");
                 System.out.println("Su Carrito contiene:");
                 for (Producto producto : carrito) {
                     System.out.println("Produto: " + producto.getDescripcion() + " Precio: "+ producto.getPrecio() + " Cantidad: " + producto.getCantidad());
@@ -69,15 +72,29 @@ public class VentaOnline {
 
             }
             if(opcion == 3){
+                System.out.println("Ingrese el comentario a su compra:");
+                comentario = s.next();
+                System.out.println("Su comentario fue agregado correctamente:" + comentario);
                 
             }
         }
-    
-    
+    System.out.println("---------------------------------------");
+    System.out.println("Su compra fue:");
+    for (Producto producto : carrito) {
+        System.out.println("Produto: " + producto.getDescripcion() + " Precio: "+ producto.getPrecio() + " Cantidad: " + producto.getCantidad());
+
+    }
+    int t = cerveza.getPrecio() * cerveza.getCantidad() + bebida.getPrecio() * bebida.getCantidad() + cloro.getPrecio() * cloro.getCantidad()+ lavaloza.getPrecio() * lavaloza.getCantidad();
+    System.out.println("---------------------------------------");
+    System.out.println("Total compra: " + t);
+    System.out.println("---------------------------------------");
+    System.out.println(comentario);
     
 
     
     
     }
+
+    
     
 }
